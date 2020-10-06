@@ -138,9 +138,6 @@ class EKRootViewController: UIViewController {
         // Assign attributes
         let previousAttributes = lastAttributes
         
-        // Remove the last entry
-        removeLastEntry(lastAttributes: previousAttributes, keepWindow: true)
-        
         lastAttributes = attributes
         
         let entryContentView = EKContentView(withEntryDelegate: self)
