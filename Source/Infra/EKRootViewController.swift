@@ -189,6 +189,19 @@ class EKRootViewController: UIViewController {
         lastEntry?.animateOut(pushOut: false)
     }
     
+    func animateOutEntry(with name: String, completionHandler: SwiftEntryKit.DismissCompletionHandler? = nil) {
+        view.subviews.forEach { subViewContentView in
+            guard let contentView = subViewContentView as? EKContentView,
+                  contentView.contentView.content.attributes.name == name else {
+                return
+            }
+
+            contentView.contentView.content.attributes.name == name
+            contentView.dismissHandler = completionHandler
+            contentView.animateOut(pushOut: false)
+        }
+    }
+    
     // Pops last entry (using pop animation) - animatedly
     func popLastEntry() {
         lastEntry?.animateOut(pushOut: true)

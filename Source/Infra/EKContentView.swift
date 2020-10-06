@@ -67,7 +67,7 @@ class EKContentView: UIView {
     }
     
     // Content
-    private var contentView: EKEntryView!
+    var contentView: EKEntryView!
     
     // MARK: Setup
     required init?(coder aDecoder: NSCoder) {
